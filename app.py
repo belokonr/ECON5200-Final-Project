@@ -1,6 +1,3 @@
-# Save this as app.py in your project repo
-
-streamlit_template = '''
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -113,11 +110,3 @@ st.markdown("""
 - **Panel:** 51 states x 5 years (2018-2019, 2021-2023)
 - **Key assumption:** Conditional independence after controlling for state economic conditions
 """)
-'''
-
-# Uncomment to write the template to disk:
-# with open('app.py', 'w') as f:
-#     f.write(streamlit_template)
-# print('app.py written. Deploy to Streamlit Community Cloud.')
-
-# print('Streamlit template ready. Uncomment the write block above to export.')
