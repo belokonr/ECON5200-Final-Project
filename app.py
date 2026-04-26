@@ -116,8 +116,8 @@ st.markdown("""
 '''
 
 # Uncomment to write the template to disk:
-with open('app.py', 'w') as f:
-    f.write(streamlit_template)
-print('app.py written. Deploy to Streamlit Community Cloud.')
+# with open('app.py', 'w') as f:
+#     f.write(streamlit_template)
+# print('app.py written. Deploy to Streamlit Community Cloud.')
 
-print('Streamlit template ready. Uncomment the write block above to export.')
+# print('Streamlit template ready. Uncomment the write block above to export.')
