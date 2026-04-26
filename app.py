@@ -25,8 +25,8 @@ z_map = {"90%": 1.645, "95%": 1.96, "99%": 2.576}
 z_val = z_map[confidence_level]
 
 # --- Pre-computed results from DML (replace with your actual values) ---
-baseline_ate = -150.0     # TODO: Replace with your causal_estimate_scalar
-baseline_se = 50.0        # TODO: Replace with your standard error
+baseline_ate = 673.02     # TODO: Replace with your causal_estimate_scalar
+baseline_se = 167.86        # TODO: Replace with your standard error
 
 # --- Compute What-If Estimate ---
 # ATE is per 1-unit (100pp) change in WFH rate, so scale by pp/100
