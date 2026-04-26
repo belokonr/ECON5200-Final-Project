@@ -83,6 +83,26 @@ fig.update_layout(
 )
 st.plotly_chart(fig, use_container_width=True)
 
+# --- Explicit Counterfactual Scenario ---
+st.subheader("Counterfactual Scenario")
+counterfactual_pp = 10.0  # fixed scenario: WFH rises 10pp
+cf_effect = baseline_ate * (counterfactual_pp / 100)
+cf_se = baseline_se * (counterfactual_pp / 100)
+cf_ci_lower = cf_effect - 1.96 * cf_se
+cf_ci_upper = cf_effect + 1.96 * cf_se
+
+st.markdown(f"""
+> **Counterfactual:** If remote work rates increase by {counterfactual_pp:.0f} percentage points 
+> nationwide (roughly a doubling of the post-pandemic shift), the estimated effect on 
+> the FHFA House Price Index would be **{cf_effect:.1f} points** 
+> (95% CI: [{cf_ci_lower:.1f}, {cf_ci_upper:.1f}]).
+""")
+
+cf_col1, cf_col2, cf_col3 = st.columns(3)
+cf_col1.metric("Scenario", f"+{counterfactual_pp:.0f} pp WFH")
+cf_col2.metric("Predicted HPI Impact", f"{cf_effect:.1f} pts")
+cf_col3.metric("95% CI", f"[{cf_ci_lower:.1f}, {cf_ci_upper:.1f}]")
+
 # --- Method Note ---
 st.subheader("Methodology")
 st.markdown("""
